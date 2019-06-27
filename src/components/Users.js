@@ -9,7 +9,9 @@ import * as usersActions from '../actions/usersActions';
 class Users extends Component {
 
 	componentDidMount() {
-		this.props.getAllUsers()
+		if(!this.props.users.length) {
+			this.props.getAllUsers()
+		}
 	}
 
 	renderContent = () => {
@@ -19,7 +21,7 @@ class Users extends Component {
 		}
 
 		if (this.props.error) {
-			return <FatalError />
+			return <FatalError message={this.props.error } />
 		}
 
 		return <Table />

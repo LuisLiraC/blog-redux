@@ -3,12 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Users from './Users'
 import Layout from './Layout';
 import Posts from './Posts';
-
-const Tasks = () => (
-	<div>
-		Tasks
-  </div>
-)
+import Tasks from './Tasks';
 
 const App = () => (
 	<BrowserRouter>

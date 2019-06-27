@@ -37,3 +37,31 @@ body {
   	padding-right: 50px;
   	text-decoration: none;
 }
+
+.post_title {
+	border-top: 1px solid black;
+	cursor: pointer;
+	padding: 10px 10px;
+}
+
+.post_title:hover {
+	background-color: rgba(196, 196, 196, 0.1)
+}
+
+.post_title h2::first-letter,
+.post_title p::first-letter {
+	text-transform: capitalize
+}
+
+.post_title ul {
+	padding-left: 10px;
+}
+
+.post_title li {
+	padding: 10px 10px 10px 10px;
+	list-style: none;
+	border: 1px solid rgba(58, 145, 196, 0.5);
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background: rgba(58, 145, 196, 0.1);
+}

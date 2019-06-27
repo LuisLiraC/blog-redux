@@ -14,7 +14,7 @@ export const getAllUsers = () => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: ERROR,
-            payload: "Ha ocurrido un error. Intenta más tarde"
+            payload: "Información no disponible"
         })
     }
 
