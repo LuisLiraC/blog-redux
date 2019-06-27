@@ -12,7 +12,7 @@ class Publications extends Component {
 			getAllUsers,
 			match: { params: { key } },
 			getUserPosts
-		} = this.props;
+		} = this.props
 
         if(!this.props.usersReducer.users.length){
             await getAllUsers()

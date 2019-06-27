@@ -3,7 +3,7 @@ import Menu from './Menu'
 
 class Layout extends Component {
     render(){
-        const {children} = this.props;
+        const {children} = this.props
         return(
             <Fragment>
                 <Menu />
@@ -15,4 +15,4 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+export default Layout

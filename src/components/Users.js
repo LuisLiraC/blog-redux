@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Spinner from './Spinner';
-import FatalError from './FatalError';
-import Table from './Table';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Spinner from './Spinner'
+import FatalError from './FatalError'
+import Table from './Table'
 
-import * as usersActions from '../actions/usersActions';
+import * as usersActions from '../actions/usersActions'
 
 class Users extends Component {
 
@@ -43,4 +43,4 @@ class Users extends Component {
 
 const mapStateToProps = reducers => reducers.usersReducer
 
-export default connect(mapStateToProps, usersActions)(Users);
+export default connect(mapStateToProps, usersActions)(Users)

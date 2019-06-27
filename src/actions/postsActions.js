@@ -33,7 +33,7 @@ export const getUserPosts = (key) => async (dispatch, getState) => {
             payload: updatedPosts
         })
 
-        const posts_key = updatedPosts.length - 1;
+        const posts_key = updatedPosts.length - 1
         const updatedUsers = [...users]
         updatedUsers[key] = {
             ...users[key],
