@@ -4,10 +4,10 @@
 	color: #000;
     margin-left: 3px;
    	margin-top: 3px;
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     border-radius: 70% 15%;
-    border: solid 1px currentColor;
+    border: solid 2px currentColor;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
 }
@@ -15,13 +15,92 @@
 .eye-solid.icon:before {
     content: '';
     position: absolute;
-    left: 2px;
-    top: 2px;
+    left: 4px;
+    top: 4px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     border: solid 1px currentColor;
     background-color: currentColor;
 }
+
+.eye-solid.icon:hover {
+    color: blue;
+}
+
+
+
+.trash-solid.icon {
+    color: red;
+    position: absolute;
+    margin-left: 12px;
+    margin-top: 7px;
+    width: 13px;
+    height: 12px;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+    border-radius: 0 0 2px 2px;
+    background-color: currentColor;
+  }
+  .trash-solid.icon:hover {
+      cursor: pointer
+  }
+  
+  .trash-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -2px;
+    width: 19px;
+    height: 1px;
+    background-color: currentColor;
+  }
+  
+  .trash-solid.icon:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    width: 11px;
+    height: 2px;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-top: solid 1px currentColor;
+    background-color: currentColor;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .edit-solid.icon {
+    color: rgb(0, 150, 0);
+    position: absolute;
+    margin-left: 4px;
+    margin-top: 7px;
+    width: 17px;
+    height: 4px;
+    border-radius: 1px;
+    border: solid 1px currentColor;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .edit-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: -1px;
+    width: 0px;
+    height: 4px;
+    border-left: solid 5px transparent;
+    border-right: solid 5px currentColor;
+    border-top: solid 2px transparent;
+    border-bottom: solid 2px transparent;
+  }
+
+  .edit-solid.icon:hover {
+      cursor: pointer
+  }
+  
   
   

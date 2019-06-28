@@ -1,24 +1,27 @@
 import { GET_ALL_TASKS, LOADING, ERROR, CHANGE_TITLE, CHANGE_USER_ID, SAVED, UPDATE, CLEAN } from '../types/tasksTypes'
 
-export const getAllTasks = () => async (dispatch) => {
+export const getAllTasks = () => async (dispatch,getState) => {
     dispatch({
         type: LOADING
     })
+    
+    const {users} = getState().usersReducer
 
     try {
         const data = await fetch("https://jsonplaceholder.typicode.com/todos").then(response => response.json())
-
+        
         const toDos = {}
-
-        data.map(task => (
-            toDos[task.userId] = {
-                ...toDos[task.userId],
-                [task.id]: {
-                    ...task
+        data.map(task => {
+            return(
+                toDos[task.userId] = {
+                    ...toDos[task.userId],
+                    userName: users[ task.userId-1 ].name,
+                    [task.id]: {
+                        ...task,
+                    }
                 }
-            }
-        ))
-
+            )
+        })
         dispatch({
             type: GET_ALL_TASKS,
             payload: toDos
@@ -53,7 +56,7 @@ export const addTask = (newTask) => async (dispatch) => {
     })
 
     try {
-        const data = await fetch("https://jsonplaceholder.typicode.com/todos",
+        await fetch("https://jsonplaceholder.typicode.com/todos",
                 { 
                     method: 'POST', 
                     headers: {
@@ -63,12 +66,10 @@ export const addTask = (newTask) => async (dispatch) => {
                 }
             ).then(response => response.json())
 
-        console.log(data)
         dispatch({
             type: SAVED
         })
     } catch (error) {
-        console.log(error.message)
         dispatch({
             type: ERROR,
             payload: "Error al guardar. Intente más tarde"
@@ -83,7 +84,7 @@ export const updateTask = (updatedTask) => async (dispatch) => {
     })
 
     try {
-        const data = await fetch(`https://jsonplaceholder.typicode.com/todos/${updatedTask.id}`,
+        await fetch(`https://jsonplaceholder.typicode.com/todos/${updatedTask.id}`,
                 { 
                     method: 'PUT', 
                     headers: {
@@ -92,13 +93,12 @@ export const updateTask = (updatedTask) => async (dispatch) => {
                     body: JSON.stringify(updatedTask)
                 }
             ).then(response => response.json())
-
-        console.log(data)
+        
         dispatch({
             type: SAVED
         })
     } catch (error) {
-        console.log(error.message)
+
         dispatch({
             type: ERROR,
             payload: "Error al guardar. Intente más tarde"

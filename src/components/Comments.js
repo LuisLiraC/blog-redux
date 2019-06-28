@@ -12,8 +12,7 @@ const Comments = (props) => {
         props.comments.map( (comment) => (
             <li key={comment.id}>
                 <b><u>{comment.email}</u></b>
-                <br/>
-                {comment.body}
+                <p className="mb-0">{comment.body}</p>
             </li>
         ))
     )

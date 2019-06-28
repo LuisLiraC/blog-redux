@@ -79,13 +79,16 @@ class Publications extends Component {
             <div 
                 className="post_title" 
                 key={ post.id }
-                onClick={ () => this.showComments(post_key, com_key, post.comments) }
             >
-                <h2>{ post.title }</h2>
+                <h4>{ post.title }</h4>
                 <p>{ post.body }</p>
                 {
                     post.open ? <Comments comments={post.comments} />: ''
                 }
+                <p 
+                    onClick={ () => this.showComments(post_key, com_key, post.comments) }
+                    className="btn btn-info comments-buttons mb-1"
+                >{!post.open ? "Ver comentarios" : "Ocultar comentarios" }</p>
             </div>
         ))
     )

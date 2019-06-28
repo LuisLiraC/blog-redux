@@ -88,33 +88,38 @@ class NewTask extends Component {
             <div>
                 {this.props.redirect && <Redirect to="/tasks" />}
                 <h2>Crear nueva tarea</h2>
-                <div>
-                    <label >Usuario ID</label>
-                    <input
-                        type="number"
-                        value={this.props.userId}
-                        onChange={this.changeUserId}
-                    />
-
-                    <br /><br />
-
-                    <label >Título</label>
-                    <input
-                        type="text"
-                        value={this.props.title}
-                        onChange={this.changeTitle}
-                    />
-
-                    <br /><br />
-
-                    <button
-                        onClick={this.save}
-                        disabled={this.disable()}
-                    >
-                        Guardar
-                    </button>
-                    {this.showAction()}
-                </div>
+                <form className="mt-5">
+                    <div className="row">
+                        <div className="form-group col-6">
+                            <label >Usuario ID</label>
+                            <input
+                                type="number"
+                                value={this.props.userId}
+                                onChange={this.changeUserId}
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group col-6">
+                            <label >Título</label>
+                            <input
+                                type="text"
+                                value={this.props.title}
+                                onChange={this.changeTitle}
+                                className="form-control"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            onClick={this.save}
+                            disabled={this.disable()}
+                            className="btn btn-success"
+                        >
+                            Guardar
+                        </button>
+                        {this.showAction()}
+                    </div>
+                </form>
             </div>
         )
     }

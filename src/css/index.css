@@ -11,11 +11,6 @@ body {
   	text-align: center
 }
 
-.table {
-	width: 100%;
-  	text-align: left;
-}
-
 .red {
   	color: red;
 }
@@ -34,21 +29,17 @@ body {
 
 #menu a {
   	color: white;
-  	padding-right: 50px;
   	text-decoration: none;
 }
 
 .post_title {
-	border-top: 1px solid black;
-	cursor: pointer;
-	padding: 10px 10px;
+	border: 1px solid rgba(0, 0, 0, 0.438);
+	padding: 15px 10px;
+	margin: 30px 0px;
+	border-radius: 5px;
 }
 
-.post_title:hover {
-	background-color: rgba(196, 196, 196, 0.1)
-}
-
-.post_title h2::first-letter,
+.post_title h4::first-letter,
 .post_title p::first-letter {
 	text-transform: capitalize
 }
@@ -64,6 +55,10 @@ body {
 	margin-bottom: 10px;
 	border-radius: 5px;
 	background: rgba(58, 145, 196, 0.1);
+}
+
+.comments-buttons:hover {
+	cursor: pointer;
 }
 
 .tasks_content {
@@ -82,4 +77,20 @@ body {
 
 .task button {
 	margin-left: 20px;
+}
+
+.task-title {
+	display: inline-block
+}
+
+.task-title::first-letter{
+	text-transform: capitalize;
+}
+
+.custom-button {
+	background-color: #253A46 !important
+}
+
+.custom-button:hover{
+	background-color: rgba(37, 58, 70, 0.8) !important;
 }

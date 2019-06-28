@@ -7,7 +7,7 @@ const Table = (props) => {
 
 	const createRows = () => props.users.map((user, key) => (
 		<tr key={user.id}>
-			<td> {user.name} </td>
+			<td > {user.name} </td>
 			<td> {user.email} </td>
 			<td> {user.website} </td>
 			<td>
@@ -19,12 +19,13 @@ const Table = (props) => {
 	))
 
 	return (
-		<table className="table">
-			<thead>
+		<table className="table table-striped table-hover">
+			<thead className="thead-dark" >
 				<tr>
-					<th>Nombre</th>
-					<th>Correo</th>
-					<th>Enlace</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Correo</th>
+					<th scope="col">Enlace</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
